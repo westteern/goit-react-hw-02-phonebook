@@ -24,8 +24,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
   ul,
-  ol {
-    list-style: none;
+  ol {    
     margin: 0;
     padding: 0;
   }

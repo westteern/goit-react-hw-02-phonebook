@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types';
 import DataItem from 'components/DataItem';
 
-const DataList = ({ contacts }) => (
+const DataList = ({ contacts, onDelContact }) => (
   <ul>
     {contacts.map(({ id, name, number }) => (
         <DataItem
-            key={id}
-            name={name}
-            number={number}
+          key={id}
+          id={id}
+          name={name}
+          number={number}
+          onDelContact={()=> onDelContact(id)}
         />
     ))}
   </ul>
@@ -15,7 +17,7 @@ const DataList = ({ contacts }) => (
 
 DataList.propTypes = {
   contacts: PropTypes.arrayOf(
-    PropTypes.exact({
+    PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       number: PropTypes.string.isRequired,
