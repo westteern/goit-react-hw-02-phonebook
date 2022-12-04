@@ -2,7 +2,7 @@ import { GlobalStyle } from './GlobalStyle';
 import { nanoid } from 'nanoid';
 import { Component } from 'react';
 
-import { SectionPhonebook } from './App.styled';
+import { SectionPhonebook, Notification } from './App.styled';
 
 
 
@@ -67,7 +67,7 @@ class App extends Component {
         <h2>Contacts</h2>
         <Filter value={filter} onChange={onFiltred} />
         {!totalContacts ? (
-          <p>Your phonebook is empty. Add a new contact</p>
+          <Notification>Your phonebook is empty. Add a new contact</Notification>
         ) : (
           <DataList contacts={showContacts} onDelContact={onDelete} />
         )}

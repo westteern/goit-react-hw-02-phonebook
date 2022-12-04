@@ -6,3 +6,9 @@ export const SectionPhonebook = styled.section`
   border: 2px solid #53aecf;
 `;
 
+export const Notification = styled.p`
+  font-family: Roboto;
+  font-weight: 700;
+  text-align: center;  
+`;
+
