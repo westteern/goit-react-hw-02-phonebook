@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
+import { Contact, Btn } from './DataItem.styled';
 
 const DataItem = ({id, name, number, onDelContact }) => {
   return (
-    <li>
-      <p>{name}</p>
+    <Contact>
+      <p>{name}:</p>
       <p>{number}</p>
-      <button onClick={() => onDelContact(id)}>Delete</button>
-    </li>
+      <Btn onClick={() => onDelContact(id)}>Delete</Btn>
+    </Contact>
   );
 };
 

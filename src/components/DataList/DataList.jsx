@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import DataItem from 'components/DataItem';
+import { SectionContacts } from './DataList.styled';
 
 const DataList = ({ contacts, onDelContact }) => (
-  <ul>
+  <SectionContacts>
     {contacts.map(({ id, name, number }) => (
         <DataItem
           key={id}
@@ -12,7 +13,7 @@ const DataList = ({ contacts, onDelContact }) => (
           onDelContact={()=> onDelContact(id)}
         />
     ))}
-  </ul>
+  </SectionContacts>
 );
 
 DataList.propTypes = {

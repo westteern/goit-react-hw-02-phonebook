@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
+import { FilterInput, SectionFiltrInput, Input } from './DataFilter.styled';
 
 const Filter = ({ value, onChange }) => (
-  <label>
-    Find contacts by Name
-    <input type="text" value={value} onChange={onChange} />
-  </label>
+  <SectionFiltrInput>
+    <FilterInput>
+      Find contacts by Name
+      <Input type="text" value={value} onChange={onChange} />
+    </FilterInput>
+  </SectionFiltrInput>
 );
 
 Filter.propTypes = {

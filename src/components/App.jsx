@@ -2,9 +2,14 @@ import { GlobalStyle } from './GlobalStyle';
 import { nanoid } from 'nanoid';
 import { Component } from 'react';
 
+import { SectionPhonebook } from './App.styled';
+
+
+
 import DataInput from './DataInput';
 import DataList from './DataList';
 import Filter from './DataFilter';
+
 
 
 class App extends Component {
@@ -56,7 +61,7 @@ class App extends Component {
     const onDelete = this.delContact;
     const { filter } = this.state;
     return (
-      <>
+      <SectionPhonebook>
         <h1>Phonebook</h1>
         <DataInput onSubmit={onSubmit} />
         <h2>Contacts</h2>
@@ -67,7 +72,7 @@ class App extends Component {
           <DataList contacts={showContacts} onDelContact={onDelete} />
         )}
         <GlobalStyle />
-      </>
+      </SectionPhonebook>
     );
   }
 }
