@@ -50,24 +50,21 @@ class App extends Component {
 
   render() {
     const totalContacts = this.state.contacts.length;
-    const visibleContacts = this.getContacts();
-    const onFiltred = this.changeFilterValue;    
+    const showContacts = this.getContacts();
+    const onSubmit = this.handleSubmitForm;
+    const onFiltred = this.changeFilterValue;
+    const onDelete = this.delContact;
     const { filter } = this.state;
     return (
       <>
         <h1>Phonebook</h1>
-        <DataInput onSubmit={this.handleSubmitForm} />
+        <DataInput onSubmit={onSubmit} />
         <h2>Contacts</h2>
-        <Filter
-          value={filter} 
-          onChange={onFiltred} />
+        <Filter value={filter} onChange={onFiltred} />
         {!totalContacts ? (
           <p>Your phonebook is empty. Add a new contact</p>
         ) : (
-            <DataList
-              contacts={visibleContacts}
-              onDelContact={this.delContact}
-            />
+          <DataList contacts={showContacts} onDelContact={onDelete} />
         )}
         <GlobalStyle />
       </>
